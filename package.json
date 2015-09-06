@@ -4,7 +4,7 @@
   "description": "Parse vnet packets and emit them as a binary stream",
   "main": "vnet.js",
   "scripts": {
-    "test": "tap test",
+    "test": "tap test/[^_]*.js",
     "lint": "jshint .",
     "validate": "npm ls"
   },

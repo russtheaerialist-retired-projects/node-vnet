@@ -2,7 +2,7 @@ var util = require('util'),
     Transform = require('stream').Transform,
     packet = require('packet');
 
-var HEADER = 'b8 => eLength, b8 => length, b8 => port, b16 => finalDest, b16 => origDest'
+var HEADER = 'b8 => eLength, b8 => length, b8 => port, b16 => finalDest, b16 => origDest';
 
 function vNet(options) {
 	if (!(this instanceof vNet)) {
@@ -25,16 +25,14 @@ vNet.prototype._createParser = function() {
 	parser.extract('header', this._doHeader.bind(this));
 
 	return parser;
-}
+};
 
 vNet.prototype._transform = function(data, encoding, callback) {
 	var remaining = new Buffer(data);
-
 	while(remaining.length > 0) {
 		var parser = this._createParser();
 		parser.parse(remaining);
 		if (this._header) {
-			var dataSize = this._header.eLength - parser.length + 1;
 			var payload = remaining.slice(parser.length, this._header.eLength);
 			remaining = remaining.slice(this._header.eLength);
 
@@ -45,10 +43,10 @@ vNet.prototype._transform = function(data, encoding, callback) {
 		}
 	}
 	callback();
-}
+};
 
 vNet.prototype._doHeader = function(header) {
 	this._header = header;
-}
+};
 
 module.exports = vNet;

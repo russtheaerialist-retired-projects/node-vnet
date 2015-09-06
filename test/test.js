@@ -34,7 +34,7 @@ tap.test('vnet header must be stripped off of the header', function (t) {
 
 	input.on('end', function () {
 		var actual = output.getContents();
-		t.ok(samplePacket.length-7 == actual.length, 'header should be 7 bytes')
+		t.ok(samplePacket.length-7 == actual.length, 'header should be 7 bytes');
 
 		t.end();
 

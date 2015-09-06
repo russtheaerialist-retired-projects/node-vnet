@@ -1,6 +1,6 @@
 {
   "name": "vnet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parse vnet packets and emit them as a binary stream",
   "main": "vnet.js",
   "scripts": {

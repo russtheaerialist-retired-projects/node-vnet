@@ -1,6 +1,6 @@
 {
   "name": "vnet",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "Parse vnet packets and emit them as a binary stream",
   "main": "vnet.js",
   "scripts": {
@@ -12,7 +12,6 @@
   "license": "MIT",
   "devDependencies": {
     "precommit-hook": "^3.0.0",
-    "stream-buffers": "^2.2.0",
     "tap": "^1.4.0"
   },
   "pre-commit": [
@@ -21,6 +20,8 @@
     "test"
   ],
   "dependencies": {
-    "packet": "0.0.6"
-  }
+    "packet": "0.0.6",
+    "stream-buffers": "^2.2.0"
+  },
+  "repository": "https://github.com/RussTheAerialist/node-vnet"
 }
